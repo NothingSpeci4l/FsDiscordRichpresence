@@ -1,5 +1,9 @@
 package fr.gregwll.fsdsrp.window;
 
+import fr.gregwll.fsdsrp.Main;
+import fr.gregwll.fsdsrp.files.objects.Settings;
+import fr.gregwll.fsdsrp.files.serialization.SettingsSerializationManager;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,6 +21,9 @@ public class SettingsFrame {
         sbusernamelabel.setLocation(1, 5);
         sbusernamelabel.setForeground(Color.WHITE);
         panel.add(sbusernamelabel);
+
+        final SettingsSerializationManager settingsSerializationManager = Main.getSettingsSerializationManager();
+        //final Settings settings = settingsSerializationManager.deserialize()
 
         JTextField sbusernameTF = new JTextField(10);
         sbusernameTF.setSize(100,20);
