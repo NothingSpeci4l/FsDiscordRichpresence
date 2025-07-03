@@ -22,25 +22,25 @@ public class Main {
 
     //dirs and file
     private static File saveDir = new File(System.getProperty("user.home"), "/fsdsrp/");
+    private static final File settingsFile = new File(saveDir, "settings.json");
 
     public static void main(String[] args) throws Exception {
         settingsSerializationManager = new SettingsSerializationManager();
         System.out.println(SimbriefUtils.getflightnum("chifou"));
 
-        MainFrame.display();
-
         saveDir.mkdirs();
 
-        final File settingsFile = new File(saveDir, "settings.json");
         if(!settingsFile.exists()) {
             Settings settings = new Settings();
 
             final String jsonSettings = settingsSerializationManager.serialize(settings);
 
             FilesUtils.save(settingsFile,jsonSettings);
+
+
+        } else {
+            MainFrame.display();
         }
-
-
     }
 
     public static Logger getLogger() {
@@ -53,6 +53,10 @@ public class Main {
 
     public static File getSaveDir() {
         return saveDir;
+    }
+
+    public static File getSettingsFile() {
+        return settingsFile;
     }
 
 }
