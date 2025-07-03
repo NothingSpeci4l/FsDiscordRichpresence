@@ -9,6 +9,7 @@ import fr.gregwll.fsdsrp.files.objects.Settings;
 import fr.gregwll.fsdsrp.files.serialization.SettingsSerializationManager;
 import fr.gregwll.fsdsrp.utils.Logger;
 import fr.gregwll.fsdsrp.window.MainFrame;
+import fr.gregwll.fsdsrp.window.SimbriefUsrFrame;
 
 import java.io.File;
 
@@ -31,12 +32,13 @@ public class Main {
         saveDir.mkdirs();
 
         if(!settingsFile.exists()) {
-            Settings settings = new Settings();
+            /*Settings settings = new Settings();
 
             final String jsonSettings = settingsSerializationManager.serialize(settings);
 
-            FilesUtils.save(settingsFile,jsonSettings);
+            FilesUtils.save(settingsFile,jsonSettings);*/
 
+            SimbriefUsrFrame.Display();
 
         } else {
             MainFrame.display();

@@ -17,4 +17,17 @@ public class SimbriefUtils {
             throw new RuntimeException(e);
         }
     }
+
+
+    public static String getUserID(String username) {
+        try {
+            String json = SimbriefAPI.fetchFlightData(username);
+            JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
+
+            JsonObject general = obj.getAsJsonObject("params");
+            return general.get("user_id").getAsString();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

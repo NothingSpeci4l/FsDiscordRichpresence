@@ -15,12 +15,14 @@ public class MainFrame {
         JPanel panel = (JPanel) frame.getContentPane();
         frame.setContentPane(panel);
         panel.setLayout(null);
-        panel.setBackground(Color.DARK_GRAY);
+        panel.setBackground(new Color(15,15,15));
 
         JButton settings = new JButton("Settings");
         settings.setLocation(5, 500);
         settings.setSize(100,50);
-        settings.setBackground(Color.GRAY);
+        settings.setBackground(new Color(25,25,25));
+        settings.setForeground(Color.WHITE);
+        settings.setSelected(false);
         panel.add(settings);
 
         settings.addActionListener(new ActionListener() {
